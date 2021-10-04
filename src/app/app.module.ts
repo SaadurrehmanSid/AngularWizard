@@ -16,9 +16,15 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { StockListComponent } from './stock-list/stock-list.component'
 import { ConvertToDash } from './shared/convert-to-dash.pipe';
+import { DataTablesModule } from 'angular-datatables';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserslistComponent } from './userslist/userslist.component';
 
 const routes: Routes = [
-  { path: 'stock-list', component: StockListComponent }
+  { path: 'stock-list', component: StockListComponent },
+  {path: 'user-registration',component:UserRegistrationComponent},
+  {path:'userslist',component:UserslistComponent},
+  {path:'',component:UserslistComponent}
  
 ];
 
@@ -28,7 +34,9 @@ const routes: Routes = [
     NavComponent,
     FooterComponent,
     StockListComponent,
-    ConvertToDash
+    ConvertToDash,
+    UserRegistrationComponent,
+    UserslistComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,9 @@ const routes: Routes = [
     MatListModule,
     MatSelectModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    DataTablesModule
+
     
     
   ],

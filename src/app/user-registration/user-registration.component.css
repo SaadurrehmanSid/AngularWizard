@@ -1,0 +1,24 @@
+#stepper
+{
+    width: 80%;
+    margin:auto;
+   
+}
+
+mat-form-field
+{
+    width: 350px;
+    margin-right: 30px;
+}
+
+button {
+
+    margin-right: 3px;
+}
+
+.userRegistration { 
+    min-height: 67%;
+    margin-top: 70px;
+    margin-bottom: 0px;
+
+}
