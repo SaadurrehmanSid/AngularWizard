@@ -2,7 +2,14 @@
 {
     width: 80%;
     margin:auto;
+    background-color:#eee ;
+    border-radius:50px; ;
    
+}
+
+.mat-horizontal-stepper-header-container
+{
+    background-color: #007b5e;
 }
 
 mat-form-field

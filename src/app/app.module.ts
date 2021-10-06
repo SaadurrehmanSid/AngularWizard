@@ -19,11 +19,13 @@ import { ConvertToDash } from './shared/convert-to-dash.pipe';
 import { DataTablesModule } from 'angular-datatables';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserslistComponent } from './userslist/userslist.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: 'stock-list', component: StockListComponent },
   {path: 'user-registration',component:UserRegistrationComponent},
   {path:'userslist',component:UserslistComponent},
+  {path:'user-registration/:id',component:UserRegistrationComponent},
   {path:'',component:UserslistComponent}
  
 ];
@@ -37,6 +39,7 @@ const routes: Routes = [
     ConvertToDash,
     UserRegistrationComponent,
     UserslistComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,9 @@ const routes: Routes = [
     MatSelectModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    DataTablesModule
+    DataTablesModule,
+    CommonModule,
+    RouterModule
 
     
     

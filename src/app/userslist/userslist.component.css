@@ -154,3 +154,13 @@ section .section-title {
     height: 120px;
     border-radius: 50%;
 }
+
+/* table,thead,tbody,th,td,tr
+{
+   border-radius: 20px;
+   margin-top: 5px;;
+
+}
+table{
+    border: none;
+} */

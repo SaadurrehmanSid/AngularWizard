@@ -1,4 +1,7 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { data } from "jquery";
+import { Observable } from "rxjs";
 import { IUser } from "../users";
 
 
@@ -11,6 +14,7 @@ import { IUser } from "../users";
 
 export class UserService 
 {
+     constructor(private http:HttpClient){}
    getTopUsers():IUser[]
    {
        return [
@@ -37,5 +41,10 @@ export class UserService
            }
 
        ]
+   }
+
+   getSingleUser(id:number):Observable<any>
+   {   
+      return  this.http.get(`https://reqres.in/api/users/${id}`);
    }
 }

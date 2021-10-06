@@ -1,4 +1,6 @@
 import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
+import { userFilterService } from '../shared/userFilter.service';
+import { IUser } from "../users";
 
 @Component({
   selector: 'app-nav',
@@ -7,23 +9,23 @@ import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userfilterService:userFilterService) { }
 
 
 @Output() userInputstring : EventEmitter<string> = new EventEmitter<string>();
 
 @Input() private _filterUser:string;
 
-get filterUser()
-{
-  return this._filterUser;
-}
+// get filterUser()
+// {
+//   return this.userfilterService.filteredUsersData;
+// }
 
 set filterUser(userInput: string)
 {
-  this._filterUser = userInput;
-  
-  this.userInputstring.emit(this._filterUser);
+  this._filterUser = userInput.toLocaleLowerCase();
+  this.userfilterService.filterdata;
+  this.userfilterService.updateUsers(this._filterUser);
   
 }
 

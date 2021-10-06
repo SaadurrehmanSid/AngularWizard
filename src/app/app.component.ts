@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { UserService } from './services/users.service';
+import { userFilterService } from './shared/userFilter.service';
 import { IUser } from './users';
 export interface StockCategory {
   value: string;
@@ -31,7 +32,7 @@ export class AppComponent {
 
 
   
-  constructor(private _formBuilder: FormBuilder, private http: HttpClient,private userService:UserService) {}
+  constructor(private _formBuilder: FormBuilder, private http: HttpClient,private userService:UserService,private userFilterService:userFilterService) {}
   
   ngOnInit() {
   }

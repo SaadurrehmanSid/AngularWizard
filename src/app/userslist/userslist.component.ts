@@ -1,8 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { data } from 'jquery';
+import { Observable ,Subscription} from 'rxjs';
 import { UserService } from '../services/users.service';
+import { userFilterService } from '../shared/userFilter.service';
 import { IUser } from '../users';
+import { JsonPipe } from '@angular/common'; 
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-userslist',
@@ -15,25 +20,23 @@ export class UserslistComponent implements OnInit {
 
  
   UsersData:IUser[];
-  filteredUsersData:IUser[];
+  filteredUsersData: any = [];
   dtOptions: DataTables.Settings = {};
   topRatedUsers : IUser[];
+  sub!: Subscription;
 
   
   private _userFilter = '';
 
 
   
-  constructor(private _formBuilder: FormBuilder, private http: HttpClient,private userService:UserService) {}
+  constructor(private http:HttpClient, private userService:UserService,private userFilterService: userFilterService,private router:Router) {
+    
+
+  }
   
   ngOnInit() {
     
-
-    this.http.get<any>('https://reqres.in/api/users/').subscribe(data => {
-             this.UsersData = data.data;
-             this.filteredUsersData = data.data;
-          
-            });
 
             this.dtOptions = {
               pagingType: 'full_numbers',
@@ -42,8 +45,22 @@ export class UserslistComponent implements OnInit {
               searching:false,
              
             };
+          
+            this.userFilterService.filterdata().subscribe(res =>
+              {
+                console.log(res.data);
+                this.filteredUsersData = res.data;
+              })
+        
 
-                  this.topRatedUsers = this.userService.getTopUsers();
+             this.topRatedUsers = this.userService.getTopUsers();
+               
+  }
+
+  onClick(user :IUser)
+  {
+   var id = user.id;
+      this.router.navigate(['/user-registration/',{id}]);
   }
 
   get filterUsers(): string {
@@ -54,33 +71,7 @@ export class UserslistComponent implements OnInit {
   {
   
     this._userFilter = value;
-   this.filteredUsersData = this.filterData(value);
-   console.log(this.filteredUsersData);
-  }
 
-  filterData(value: string) 
-  {
-    if(value == '' || value == ' ')
-    {
-      return this.UsersData;
-    }
-    value = value.toLocaleLowerCase();
-    console.log(value);
-    console.log(this.UsersData);
-    console.log('filter method');
-      return this.UsersData.filter(user=>
-      
-        user.first_name.toLocaleLowerCase().indexOf( value) !== -1
-      );
-
-  }
-  
-
-
-  onUserInputstring(userInput: string)
-  {
-    this.filteredUsersData =
-    this.filterData(userInput);
   }
 
 }
