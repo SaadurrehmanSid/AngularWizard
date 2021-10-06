@@ -76,8 +76,8 @@ export class userFilterService
       value = value.toLocaleLowerCase();
       console.log(value);
       console.log(this.filteredUsersData);
-      alert('filter method');
-        return this.usersList.filter(user=>
+     
+        return this.filteredUsersData.filter(user=>
          user.first_name.toLocaleLowerCase().indexOf( value) !== -1,
         );
         
