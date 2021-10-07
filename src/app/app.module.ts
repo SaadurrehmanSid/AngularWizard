@@ -58,7 +58,6 @@ const routes: Routes = [
     DataTablesModule,
     CommonModule,
     RouterModule,
-    FontAwesomeModule,
     FontAwesomeModule
     
     
