@@ -6,8 +6,7 @@ import { Observable ,Subscription} from 'rxjs';
 import { UserService } from '../services/users.service';
 import { userFilterService } from '../shared/userFilter.service';
 import { IUser } from '../users';
-import { JsonPipe } from '@angular/common'; 
-import { map } from 'rxjs/operators';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-userslist',
@@ -16,7 +15,7 @@ import { map } from 'rxjs/operators';
 })
 export class UserslistComponent implements OnInit {
 
-    
+    editIcon = faEdit;
 
  
   UsersData:IUser[];
@@ -24,6 +23,8 @@ export class UserslistComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   topRatedUsers : IUser[];
   sub!: Subscription;
+
+  
 
   
   private _userFilter = '';
@@ -37,7 +38,7 @@ export class UserslistComponent implements OnInit {
   
   ngOnInit() {
     
-
+    
             this.dtOptions = {
               pagingType: 'full_numbers',
               pageLength: 5,

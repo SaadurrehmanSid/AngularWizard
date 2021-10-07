@@ -20,6 +20,8 @@ import { DataTablesModule } from 'angular-datatables';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserslistComponent } from './userslist/userslist.component';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 const routes: Routes = [
   { path: 'stock-list', component: StockListComponent },
@@ -55,7 +57,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     DataTablesModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule,
+    FontAwesomeModule
+    
+    
 
     
     

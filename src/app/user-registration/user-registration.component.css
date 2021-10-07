@@ -1,9 +1,12 @@
 #stepper
 {
-    width: 80%;
+    width: 90%;
     margin:auto;
     background-color:#eee ;
-    border-radius:50px; ;
+    border-radius:50px; 
+    /* transition:ease-in;
+    transition-duration: 70000ms;
+    transition-delay: 500ms; */
    
 }
 
@@ -14,7 +17,7 @@
 
 mat-form-field
 {
-    width: 350px;
+    width: 33%;
     margin-right: 30px;
 }
 
@@ -24,8 +27,43 @@ button {
 }
 
 .userRegistration { 
-    min-height: 67%;
+    min-height: 66%;
     margin-top: 70px;
     margin-bottom: 0px;
 
+
+}
+
+button 
+{
+    background-color: #007b5e;
+    color: white;
+ border-radius: 20px;
+
+}
+
+button:hover
+{
+ background-color: white;
+ color: #007b5e;
+ border: 1px solid #007b5e;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #007b5e;
+      color: white;
+   border-radius: 20px;
+  }
+
+  .swal2-confirm {
+    background-color: #007b5e;
+      color: white;
+   border-radius: 20px;
+  }
+
+  .swal2-styled
+{
+  background-color: #007b5e;
+  color: white;
+border-radius: 20px;
 }

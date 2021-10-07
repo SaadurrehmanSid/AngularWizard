@@ -6,7 +6,9 @@ import { data, map } from 'jquery';
 import { Observable, Subscription } from 'rxjs';
 import { StockCategory, User } from '../app.component';
 import { UserService } from '../services/users.service';
+import Swal from 'sweetalert2';
 import { IUser } from '../users';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
  
@@ -24,6 +26,7 @@ export class UserRegistrationComponent implements OnInit {
   singleUser :IUser;
  id:number;
  sub!:Subscription;
+ fadeTrigger = 'hidden';
 
   stockCategory: StockCategory[] = [
     {value: 'Clothes', viewValue: 'Clothes'},
@@ -46,24 +49,10 @@ export class UserRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // if(this.singleUser != null)
-    // {
-    //   this.firstFormGroup = this._formBuilder.group({
-    //     firstname: [this.singleUser.first_name, Validators.required] ,
-    //     lastname: [this.singleUser.last_name, Validators.required],
-    //     description: [this.singleUser.email, Validators.required]
-    //   });
-    // }else{
-    //   this.firstFormGroup = this._formBuilder.group({
-    //     firstname: ['', Validators.required],
-    //     lastname: ['', Validators.required],
-    //     description: ['', Validators.required]
-    //   });
-
-    // }
+   
 
     this.firstFormGroup = this._formBuilder.group({
-      first_name: ['', Validators.required],
+      first_name: ['', Validators.required,],
       last_name: ['', Validators.required],
       email: ['', Validators.required],
       address: ['', Validators.required]
@@ -100,7 +89,25 @@ export class UserRegistrationComponent implements OnInit {
    console.log(user);
  }
 
+ stepperDone() {
+  console.log('stepper is done now');
+  this.fadeTrigger = 'visible';
+}
 
+
+  fadeAnimation() {
+  return trigger('fadeAnimation', [
+    state('hidden', style({ opacity: 0 })),
+    state('visible', style({ opacity: 1 })),
+
+    transition('* => visible', [
+      animate('4s ease-in-out'),
+    ]),
+    transition('visible => *', [
+      animate('4s ease-in-out')
+    ])
+  ]);
+}
 
 
   submit(){
@@ -112,7 +119,29 @@ export class UserRegistrationComponent implements OnInit {
       next: data => {
         this.createdUser = data;
         console.log(data);
-        alert("user created successfully");
+
+
+        
+       
+        // Swal.fire(
+        //   'SUCCESS!',
+        //   'User has been created successfully.',
+        //   'success'
+          
+          
+        // )
+
+        Swal.fire({
+          icon:'success',
+           title:'Success',
+          confirmButtonColor:'#007b5e',
+          text:'User has been created successfully',
+          
+        
+      }
+         
+      )
+        
     },
     error: error => {
         var error = error.message;

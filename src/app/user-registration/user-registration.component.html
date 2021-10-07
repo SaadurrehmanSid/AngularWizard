@@ -2,14 +2,14 @@
  <div class=" mt-5 userRegistration">
     <div class="row">
       
-      <mat-horizontal-stepper [linear]="isLinear" #stepper id="stepper">
+      <mat-horizontal-stepper  [linear]="isLinear" fadeAnimation="fadeTrigger" (animationDone)="stepperDone()" #stepper id="stepper">
         <mat-step [stepControl]="firstFormGroup">
           <form [formGroup]="firstFormGroup" class="col-md-12 mt-3">
             <ng-template matStepLabel>Basic Details</ng-template>
              
               <mat-form-field>
                 <mat-label>First Name</mat-label>
-                <input matInput placeholder="Name" formControlName="first_name"  required>
+                <input matInput placeholder="Name"  formControlName="first_name"  required>
               </mat-form-field>
 
               <mat-form-field>
@@ -40,13 +40,13 @@
             <ng-template matStepLabel>Amount & Stock</ng-template>
             <mat-form-field>
               <mat-label>Initail Amount</mat-label>
-              <input matInput placeholder="Amount" formControlName="amount" required>
+              <input matInput placeholder="ex:456" type="number" formControlName="amount" required>
             </mat-form-field>
             
           
             <mat-form-field>
               <mat-label>Total Amount</mat-label>
-              <input matInput placeholder="Amount" formControlName="totalamount" required>
+              <input matInput placeholder="ex:456" type="number" formControlName="totalamount" required>
             </mat-form-field>
             
          
@@ -71,8 +71,8 @@
             
         
             <div>
-              <button mat-button matStepperPrevious class="btn btn-primary">Back</button>
-              <button mat-button matStepperNext class="btn btn-outline-primary">Next</button>
+              <button mat-button matStepperPrevious class="">Back</button>
+              <button mat-button matStepperNext class="">Next</button>
             </div>
           </form>
         </mat-step>
@@ -100,8 +100,8 @@
           <p>You are now done.</p>
         
           <mat-list>
-         <mat-list-item> <strong>Name:</strong> {{ this.firstFormGroup.value.name }}</mat-list-item>
-         <mat-list-item> <strong>Description:</strong> {{ this.firstFormGroup.value.description }}</mat-list-item>
+         <mat-list-item> <strong>Name:</strong> {{ this.firstFormGroup.value.first_name }}</mat-list-item>
+         <mat-list-item> <strong>Email:</strong> {{ this.firstFormGroup.value.email }}</mat-list-item>
          <mat-list-item> <strong>Amount:</strong> {{ this.secondFormGroup.value.amount }}</mat-list-item>
          <mat-list-item> <strong>Total Amount:</strong> {{ this.secondFormGroup.value.totalamount }}</mat-list-item>
          <mat-list-item> <strong>Stock Category:</strong> {{ this.secondFormGroup.value.stock }}</mat-list-item>
@@ -111,9 +111,9 @@
         </mat-list>
         
           <div>
-            <button mat-button matStepperPrevious class="btn btn-primary">Back</button>
-            <button mat-button (click)="stepper.reset()" class="btn btn-outline-primary">Reset</button>
-            <button mat-button (click)="submit()" class="btn btn-primary">Submit</button>
+            <button mat-button matStepperPrevious class="">Back</button>
+            <button mat-button (click)="stepper.reset()" class="">Reset</button>
+            <button mat-button (click)="submit()" class="">Submit</button>
           </div>
         </mat-step>
       </mat-horizontal-stepper>

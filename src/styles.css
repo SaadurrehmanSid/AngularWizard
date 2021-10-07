@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* 
+@import url("../node_modules/font-awesome/css/font-awesome.min.css"); */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow-y:auto;/* background-color: #D3D3D3;*/  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow-y:auto;/* background-color: #D3D3D3;*/ overflow-x: hidden; }
 
 .dataTables_wrapper
 {
@@ -38,17 +40,38 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow-y:a
 .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
   background-color: #df1c0e;
   color: #fff;
+  opacity: 0.8;
 }
 
 
+button 
+{
+    background-color: #007b5e;
+    color: white;
+ border-radius: 20px;
 
+}
+
+
+.swal2-confirm {
+  background-color: #007b5e;
+    color: white;
+ border-radius: 20px;
+}
+
+.swal2-styled
+{
+  background-color: #007b5e;
+  color: white;
+border-radius: 20px;
+}
 
 
 .mat-step-header.cdk-keyboard-focused,
 .mat-step-header.cdk-program-focused,
 .mat-step-header:hover:not([aria-disabled]),
 .mat-step-header:hover[aria-disabled=false] {
-	background-color: rgb(129, 116, 116)
+	background-color: rgb(129, 116, 116,0.7)
 }
 
 

@@ -155,6 +155,11 @@ section .section-title {
     border-radius: 50%;
 }
 
+fa-icon
+{
+    color: teal;
+}
+
 /* table,thead,tbody,th,td,tr
 {
    border-radius: 20px;
