@@ -21,6 +21,7 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { UserslistComponent } from './userslist/userslist.component';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'user-registration',component:UserRegistrationComponent},
   {path:'userslist',component:UserslistComponent},
   {path:'user-registration/:id',component:UserRegistrationComponent},
+  {path:'userdetails/:id',component:UserdetailsComponent},
   {path:'',component:UserslistComponent}
  
 ];
@@ -40,7 +42,8 @@ const routes: Routes = [
     StockListComponent,
     ConvertToDash,
     UserRegistrationComponent,
-    UserslistComponent
+    UserslistComponent,
+    UserdetailsComponent
     
   ],
   imports: [

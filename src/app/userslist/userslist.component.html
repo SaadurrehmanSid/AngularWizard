@@ -10,7 +10,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>Action</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -20,8 +20,10 @@
             <td>{{user.first_name}}</td>
             <td>{{user.last_name}}</td>
             <td>{{user.email}}</td>
-            <td style="text-align: right;"><a [routerLink]="['/user-registration',user.id]" ><fa-icon [icon]="editIcon"></fa-icon></a></td>
-            
+            <td style="text-align: right;">
+                <a class="mr-2" [routerLink]="['/userdetails',user.id]"data-toggle="tooltip" data-placement="top" title="Delete!" ><fa-icon [icon]="deleteIcon"></fa-icon></a>
+                <a class="mr-2" [routerLink]="['/userdetails',user.id]"data-toggle="tooltip" data-placement="top" title="Details!"  ><fa-icon [icon]="detailIcon"></fa-icon></a>
+                <a [routerLink]="['/user-registration',user.id]" data-toggle="tooltip" data-placement="top" title="Edit!" ><fa-icon [icon]="editIcon"></fa-icon></a></td>
           </tr>
         </tbody>
       </table>

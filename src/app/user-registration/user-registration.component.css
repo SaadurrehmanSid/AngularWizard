@@ -49,30 +49,3 @@ button:hover
  border: 1px solid #007b5e;
 }
 
-.swal2-styled.swal2-confirm {
-    background-color: #007b5e;
-      color: white;
-   border-radius: 20px;
-  }
-
-  .swal2-confirm {
-    background-color: #007b5e;
-      color: white;
-   border-radius: 20px;
-  }
-
-  .swal2-styled
-{
-  background-color: #007b5e;
-  color: white;
-border-radius: 20px;
-}
-
-.mat-step-header
-{
-  background-color: black;
-}
-
-.animation{
- transition-duration: 5000ms;
-}

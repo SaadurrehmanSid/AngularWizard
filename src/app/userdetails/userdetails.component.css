@@ -1,0 +1,26 @@
+#userDetail
+{
+    min-height: 66%;
+    width: 80%;
+    margin: auto;
+    border: 1px solid #eee;
+}
+
+img
+{
+    width: 350px;
+    margin-top: 10%;
+}
+
+#headerHiding
+{
+    padding: 15px;
+    background-color: #eee;
+    font-size: large;
+    text-align: center;
+}
+
+#detailsDiv
+{
+   
+}

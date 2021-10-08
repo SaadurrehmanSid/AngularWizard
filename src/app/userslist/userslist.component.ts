@@ -6,7 +6,7 @@ import { Observable ,Subscription} from 'rxjs';
 import { UserService } from '../services/users.service';
 import { userFilterService } from '../shared/userFilter.service';
 import { IUser } from '../users';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faInfo, faInfoCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-userslist',
@@ -16,7 +16,8 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 export class UserslistComponent implements OnInit {
 
     editIcon = faEdit;
-
+    detailIcon = faInfoCircle;
+    deleteIcon = faTrash
  
   UsersData:IUser[];
   filteredUsersData: any = [];
