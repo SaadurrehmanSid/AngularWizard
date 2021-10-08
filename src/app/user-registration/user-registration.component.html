@@ -2,7 +2,7 @@
  <div class=" mt-5 userRegistration">
     <div class="row">
       
-      <mat-horizontal-stepper  [linear]="isLinear" fadeAnimation="fadeTrigger" (animationDone)="stepperDone()" #stepper id="stepper">
+      <mat-horizontal-stepper  [linear]="isLinear" [@.disabled]="true" #stepper id="stepper">
         <mat-step [stepControl]="firstFormGroup">
           <form [formGroup]="firstFormGroup" class="col-md-12 mt-3">
             <ng-template matStepLabel>Basic Details</ng-template>

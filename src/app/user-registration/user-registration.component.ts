@@ -2,18 +2,23 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { data, map } from 'jquery';
-import { Observable, Subscription } from 'rxjs';
+import { from, Observable, Subscription } from 'rxjs';
 import { StockCategory, User } from '../app.component';
 import { UserService } from '../services/users.service';
 import Swal from 'sweetalert2';
 import { IUser } from '../users';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import {horizontalStepTransitionAnimation} from './horizontal-step-animation';
 
 @Component({
  
   templateUrl: './user-registration.component.html',
-  styleUrls: ['./user-registration.component.css']
+  styleUrls: ['./user-registration.component.css'],
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
+  }]
+ 
 })
 export class UserRegistrationComponent implements OnInit {
 
@@ -24,9 +29,10 @@ export class UserRegistrationComponent implements OnInit {
   isLinear = true;
   title = 'newMat';
   singleUser :IUser;
+  open:string;
  id:number;
  sub!:Subscription;
- fadeTrigger = 'hidden';
+ fadeTrigger = 'visible';
 
   stockCategory: StockCategory[] = [
     {value: 'Clothes', viewValue: 'Clothes'},
@@ -46,6 +52,7 @@ export class UserRegistrationComponent implements OnInit {
     console.log(this.singleUser);
   
   }
+
 
   ngOnInit(): void {
 

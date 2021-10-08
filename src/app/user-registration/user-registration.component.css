@@ -67,3 +67,12 @@ button:hover
   color: white;
 border-radius: 20px;
 }
+
+.mat-step-header
+{
+  background-color: black;
+}
+
+.animation{
+ transition-duration: 5000ms;
+}

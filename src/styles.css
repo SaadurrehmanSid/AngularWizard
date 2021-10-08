@@ -23,7 +23,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow-y:a
 }
 
 .mat-horizontal-stepper-header-container{
-  border: rgb(red, green, blue);
+  transition-duration: 5000ms;
+}
+
+.mat-step
+{
+  transition-duration: 5000ms;
 }
 
 .mat-step-icon {
@@ -34,6 +39,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow-y:a
 .mat-stepper-horizontal-line{
 
   background-color: white;
+  transition-duration: 1000ms;
 }
 
 
@@ -41,6 +47,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow-y:a
   background-color: #df1c0e;
   color: #fff;
   opacity: 0.8;
+  transition-duration: 1000ms;
 }
 
 
@@ -80,6 +87,10 @@ border-radius: 20px;
   color: white;
 }
 
-.mat-step-text-label.cdk-program-focused{
-  color: black;
-}
+
+
+
+
+.stepTransition{
+  transition-duration: 5000ms;
+ }
