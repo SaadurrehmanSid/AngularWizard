@@ -21,7 +21,7 @@
             <td>{{user.last_name}}</td>
             <td>{{user.email}}</td>
             <td style="text-align: right;">
-                <a class="mr-2" [routerLink]="['/userdetails',user.id]"data-toggle="tooltip" data-placement="top" title="Delete!" ><fa-icon [icon]="deleteIcon"></fa-icon></a>
+                <a class="mr-2" (click)='deleteUser()' data-toggle="tooltip" data-placement="top" title="Delete!" ><fa-icon [icon]="deleteIcon"></fa-icon></a>
                 <a class="mr-2" [routerLink]="['/userdetails',user.id]"data-toggle="tooltip" data-placement="top" title="Details!"  ><fa-icon [icon]="detailIcon"></fa-icon></a>
                 <a [routerLink]="['/user-registration',user.id]" data-toggle="tooltip" data-placement="top" title="Edit!" ><fa-icon [icon]="editIcon"></fa-icon></a></td>
           </tr>

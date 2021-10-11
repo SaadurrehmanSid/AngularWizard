@@ -4,23 +4,57 @@
     width: 80%;
     margin: auto;
     border: 1px solid #eee;
+    margin-top: 50px;
 }
 
 img
 {
     width: 350px;
-    margin-top: 10%;
+    margin-top: 4%;
+    
+    
+}
+
+#ImageDiv
+{
+  text-align: center;
+  display: inline;
+  margin-right: 0%;
+}
+th{
+    color: #007b5e;
+    text-align: left;
+}
+
+td{
+    padding-left: 20px;
+    text-align: left;
 }
 
 #headerHiding
 {
     padding: 15px;
     background-color: #eee;
-    font-size: large;
     text-align: center;
+    color: #007b5e;
 }
 
-#detailsDiv
+
+
+.details
 {
-   
+    margin-top: 7%;
+    text-align: left;
+    margin-left: -150px;
+    display: inline;
+    
 }
+
+
+@media screen and (min-width: 480px) {
+    .details
+    {
+        margin-left: 50px;
+    }
+ 
+  }

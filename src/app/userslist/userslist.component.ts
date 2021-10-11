@@ -7,6 +7,7 @@ import { UserService } from '../services/users.service';
 import { userFilterService } from '../shared/userFilter.service';
 import { IUser } from '../users';
 import { faEdit, faInfo, faInfoCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-userslist',
@@ -74,6 +75,32 @@ export class UserslistComponent implements OnInit {
   
     this._userFilter = value;
 
+  }
+
+  deleteUser()
+  {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      confirmButtonColor:'#007b5e',
+      showCancelButton: true,
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          icon:'success',
+           title:'Success',
+          confirmButtonColor:'#007b5e',
+          text:'User has been deleted successfully',
+          
+        
+      }
+         
+      )
+      }
+    })
   }
 
 }

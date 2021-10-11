@@ -1,26 +1,50 @@
 
 
 <div id="userDetail">
-    <h5 id="headerHiding">
+    <h3 id="headerHiding">
         User Details
-    </h5>
+    </h3>
     <div class="row" id="detailsDiv">
-        <div class="col-md-6">
-            <img src="https://reqres.in/img/faces/2-image.jpg" alt="user picture" class="rounded-circle">
+        <div class="col-md-6 col-sm-12" id="ImageDiv">
+            <img src={{User.avatar}} alt="user picture" class="rounded-circle">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-12" class="details">
             <table>
                    <tr>
                        <th>First Name</th>
-                       <td>Janeet</td>
+                       <td>{{User.first_name}}</td>
                    </tr>
                    <tr>
                     <th>Last Name</th>
-                    <td>Waves</td>
+                    <td>{{User.last_name}}</td>
                     </tr>
                     <tr>
                         <th>Email</th>
-                        <td>janeetwaves@google.com</td>
+                        <td>{{User.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Department</th>
+                        <td>Sotware Engineering</td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th>
+                        <td>Principle Software Engineer</td>
+                    </tr>
+                    <tr>
+                        <th>Experience</th>
+                        <td>9.8 years</td>
+                    </tr>
+                    <tr>
+                        <th>Rating</th>
+                        <td>4.7/5</td>
+                    </tr>
+                    <tr>
+                        <th>Employee Of Month</th>
+                        <td>7 times</td>
+                    </tr>
+                    <tr>
+                        <th>Achievemnets</th>
+                        <td>Google Certified DEV</td>
                     </tr>
               
             </table>
